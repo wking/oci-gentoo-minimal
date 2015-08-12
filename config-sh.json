@@ -12,7 +12,8 @@
       "additionalGids": null
     },
     "args": [
-      "run.sh"
+      "busybox",
+      "sh"
     ],
     "env": [
       "PATH=/bin",
