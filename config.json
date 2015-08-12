@@ -12,6 +12,7 @@
       "additionalGids": null
     },
     "args": [
+      "busybox",
       "sh"
     ],
     "env": [
