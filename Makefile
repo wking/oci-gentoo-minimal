@@ -1,9 +1,10 @@
 .PRECIOUS: rootfs %.tar.bz2
 
 RUNC = runc
+CONFIG = config.json
 
 run: setup
-	sudo $(RUNC)
+	sudo $(RUNC) $(CONFIG)
 
 setup: rootfs
 	sudo chown -R root:root rootfs root
