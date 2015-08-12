@@ -1,0 +1,13 @@
+./bin/busybox
+./dev
+./etc/group
+./etc/passwd
+./lib64/ld-[0-9]*.so
+./lib64/ld-linux-x86-64.so*
+./lib64/libc.so.*
+./lib64/libc-*.so
+./lib64/libpthread*.so*
+./proc
+./root
+./run
+./sys
