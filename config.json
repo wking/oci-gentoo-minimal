@@ -68,6 +68,12 @@
       "source": "cgroup",
       "destination": "/sys/fs/cgroup",
       "options": "nosuid,noexec,nodev,relatime,ro"
+    },
+    {
+      "type": "bind",
+      "source": "root",
+      "destination": "/root",
+      "options": "rbind,rw"
     }
   ],
   "hooks": {
