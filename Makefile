@@ -1,7 +1,9 @@
 .PRECIOUS: rootfs %.tar.bz2
 
+RUNC = runc
+
 run: setup
-	sudo runc
+	sudo $(RUNC)
 
 setup: rootfs
 	sudo chown -R root:root rootfs root
