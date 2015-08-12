@@ -32,9 +32,6 @@ ARCH_URL="${ARCH_URL:-${BASE_ARCH_URL}${DATE}/}"
 STAGE3="${STAGE3:-stage3-amd64-${DATE}.tar.bz2}"
 STAGE3_CONTENTS="${STAGE3_CONTENTS:-${STAGE3}.CONTENTS}"
 STAGE3_DIGESTS="${STAGE3_DIGESTS:-${STAGE3}.DIGESTS.asc}"
-PORTAGE_URL="${PORTAGE_URL:-${MIRROR}snapshots/}"
-PORTAGE="${PORTAGE:-portage-${DATE}.tar.xz}"
-PORTAGE_SIG="${PORTAGE_SIG:-${PORTAGE}.gpgsig}"
 
 die()
 {
@@ -48,16 +45,6 @@ for FILE in "${STAGE3}" "${STAGE3_CONTENTS}" "${STAGE3_DIGESTS}"; do
 		if [ "$?" -ne 0 ]; then
 			rm -f "downloads/${FILE}" &&
 			die "failed to download ${ARCH_URL}${FILE}"
-		fi
-	fi
-done
-
-for FILE in "${PORTAGE}" "${PORTAGE_SIG}"; do
-	if [ ! -f "downloads/${FILE}" ]; then
-		wget -O "downloads/${FILE}" "${PORTAGE_URL}${FILE}" ||
-		if [ "$?" -ne 0 ]; then
-			rm -f "downloads/${FILE}" &&
-			die "failed to download ${PORTAGE_URL}${FILE}"
 		fi
 	fi
 done
