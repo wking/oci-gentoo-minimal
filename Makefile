@@ -6,7 +6,7 @@ CONFIG = config.json
 run: setup
 	sudo $(RUNC) $(CONFIG)
 
-setup: rootfs
+setup: rootfs/etc
 	sudo chown -R root:root rootfs root
 	sudo chmod 755 rootfs/bin/* rootfs/lib64/*
 
@@ -19,7 +19,7 @@ downloads/stage3-amd64-current.tar.bz2: grab.sh
 	./$<
 	touch downloads/stage3-amd64-*.tar.bz2
 
-rootfs: downloads/stage3-amd64-current.tar.bz2 rootfs-files
-	mkdir rootfs
+rootfs/etc: downloads/stage3-amd64-current.tar.bz2 rootfs-files
+	mkdir -p rootfs
 	tar -xvf downloads/stage3-amd64-current.tar.bz2 -C rootfs \
 		--no-recursion --wildcards $$(< rootfs-files)
