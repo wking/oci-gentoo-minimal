@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Copyright (C) 2014 W. Trevor King <wking@tremily.us>
+# Copyright (C) 2014-2015 W. Trevor King <wking@tremily.us>
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -47,4 +47,12 @@ for FILE in "${STAGE3}" "${STAGE3_CONTENTS}" "${STAGE3_DIGESTS}"; do
 			die "failed to download ${ARCH_URL}${FILE}"
 		fi
 	fi
+
+	CURRENT="${FILE/${DATE}/current}"
+	(
+		cd downloads &&
+		rm -f "${CURRENT}" &&
+		ln -s "${FILE}" "${CURRENT}" ||
+		die "failed to link ${CURRENT} -> ${FILE}"
+	)
 done
