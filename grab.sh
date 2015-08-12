@@ -61,5 +61,3 @@ for FILE in "${PORTAGE}" "${PORTAGE_SIG}"; do
 		fi
 	fi
 done
-
-sed -i "s/DATE=.*/DATE=\"\${DATE:-${DATE}}\"/" build.sh
