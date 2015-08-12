@@ -8,7 +8,6 @@ run: setup
 setup: rootfs
 	sudo chown -R root:root rootfs root
 	sudo chmod 755 rootfs/bin/* rootfs/lib64/*
-	sudo cp -L /etc/resolv.conf rootfs/etc/resolv.conf
 
 clean:
 	sudo rm -rf root rootfs/etc/resolv.conf

@@ -71,6 +71,12 @@
     },
     {
       "type": "bind",
+      "source": "/etc/resolv.conf",
+      "destination": "/etc/resolv.conf",
+      "options": "rbind,ro"
+    },
+    {
+      "type": "bind",
       "source": "root",
       "destination": "/root",
       "options": "rbind,rw"
