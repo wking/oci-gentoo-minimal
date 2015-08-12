@@ -1,6 +1,6 @@
 .PRECIOUS: rootfs %.tar.bz2
 
-RUNC = runc
+RUNC = ./runc
 CONFIG = config.json
 
 run: setup
