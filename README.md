@@ -1,7 +1,7 @@
 A minimal [OCI bundle][bundle] based on [Gentoo's stage3s][stage3].
 
-This is enough to run simple Go binaries using the host's network
-namespace.
+This is enough to run a public [IPFS][] gateway binding to all
+available network addresses.
 
 Usage
 =====
@@ -29,5 +29,6 @@ or:
 
 [bundle]: https://github.com/opencontainers/specs/blob/master/bundle.md
 [stage3]: https://www.gentoo.org/downloads/
+[IPFS]: http://ipfs.io/
 [sudo]: http://www.sudo.ws/
 [override]: https://www.gnu.org/software/make/manual/html_node/Overriding.html
