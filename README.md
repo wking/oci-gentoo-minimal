@@ -27,6 +27,10 @@ or:
 
   $ make RUNC=./runc
 
+To launch a shell for inspecting a similar container, you can use:
+
+  $ make CONFIG=config-sh.json
+
 [bundle]: https://github.com/opencontainers/specs/blob/master/bundle.md
 [stage3]: https://www.gentoo.org/downloads/
 [IPFS]: http://ipfs.io/
