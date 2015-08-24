@@ -125,20 +125,16 @@
     },
     "namespaces": [
       {
-        "type": "process",
-        "path": ""
+        "type": "ipc"
       },
       {
-        "type": "ipc",
-        "path": ""
+        "type": "mount"
       },
       {
-        "type": "uts",
-        "path": ""
+        "type": "process"
       },
       {
-        "type": "mount",
-        "path": ""
+        "type": "uts"
       }
     ],
     "capabilities": [
