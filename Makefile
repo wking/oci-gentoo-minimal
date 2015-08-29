@@ -2,11 +2,12 @@
 
 RUNC = ./runc
 CONFIG = config.json
+ROOTFS =
 
 run: setup
 	sudo $(RUNC) $(CONFIG)
 
-setup: rootfs/etc
+setup: $(ROOTFS)
 	sudo chown -R root:root rootfs root
 	sudo chmod 755 rootfs/bin/* rootfs/lib64/*
 
