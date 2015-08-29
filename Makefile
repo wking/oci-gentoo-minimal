@@ -9,7 +9,7 @@ run: setup
 
 setup: $(ROOTFS)
 	sudo chown -R root:root rootfs root
-	sudo chmod 755 rootfs/bin/* rootfs/lib64/*
+	sudo chmod 755 runc rootfs/bin/* rootfs/lib64/*
 
 clean:
 	sudo rm -rf root rootfs/etc/resolv.conf
