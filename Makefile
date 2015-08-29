@@ -2,6 +2,7 @@
 
 RUNC = runc
 CONFIG = config.json
+ROOTFS =
 
 TEMPLATE_VARIABLES = UID GID
 UID = $(shell id -u)
@@ -10,7 +11,7 @@ GID = $(shell id -g)
 run: setup
 	sudo $(RUNC) $(CONFIG)
 
-setup: rootfs config.json
+setup: config.json $(ROOTFS)
 	chmod 755 rootfs/bin/* rootfs/lib64/*
 
 clean:
